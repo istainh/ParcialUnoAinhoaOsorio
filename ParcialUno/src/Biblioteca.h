@@ -7,6 +7,8 @@
 #define BIBLIOTECA_H_
 
 #define TAM 30
+#define MAX 20
+#define CANTIDAD 50
 
 //Prototipos Validaciones
 

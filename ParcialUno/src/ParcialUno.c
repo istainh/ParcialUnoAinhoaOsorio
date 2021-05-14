@@ -10,6 +10,9 @@ int main(void) {
 	int menu;
 	int flagCarga=0;
 	int flagId=0;
+	int flagIdRecaudacion=0;
+	int flagCargaRecaudacion=0;
+	int auxIdContribuyente;
 
 	initContribuyentes(contribuyente, CANTIDAD);
 
@@ -48,12 +51,10 @@ int main(void) {
 					 break;
 
 				case 4:
-					 if(flagCarga==0)
-					 {
-					 }
-					 else
-					 {
-					 }
+					if(utn_getNumero(&auxIdContribuyente, "Ingrese el ID del contribuyente de la recaudación.\n", "Error al ingresar el ID", 1000, 1050, 5))
+					{
+						cargaDatosContribuyente(contribuyente, CANTIDAD, &flagCargaRecaudacion, auxIdContribuyente);
+					}
 					 break;
 
 				case 5:

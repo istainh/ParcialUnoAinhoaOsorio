@@ -1,15 +1,7 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <ctype.h>
-
 #include "Biblioteca.h"
 
 #ifndef CONTRIBUYENTES_H_
 #define CONTRIBUYENTES_H_
-
-#define MAX 20
-#define CANTIDAD 50
 
 
 typedef struct
