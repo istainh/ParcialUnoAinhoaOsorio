@@ -15,30 +15,35 @@ int main(void) {
 
 	do
 	{
-		menu=utn_getNumero(&opcion,"MENÚ DE OPCIONES:\n\n [1] Alta Contribuyentes\n", "No ingresó una opción válida. Vuelve a intentarlo.\n", 1, 9, 10);
+		menu=utn_getNumero(&opcion,"MENÚ DE OPCIONES:\n\n [1] Alta Contribuyentes\n [2] Modificar contribuyente\n [3] Baja Contribuyentes\n", "No ingresó una opción válida. Vuelve a intentarlo.\n", 1, 9, 10);
 		if(menu==0)
 		{
 			switch (opcion)
 			{
-				case 1:
+				case 1: //Alta contribuyente
 					cargaDatosContribuyente(contribuyente, CANTIDAD, &flagCarga, &flagId);
 				break;
 
-				case 2:
+				case 2: //Modificar datos del contribuyente
 					 if(flagCarga==0)
 					 {
+						 printf("No se han ingresado contribuyentes.\n");
 					 }
 					 else
 					 {
+						 menuModificador(contribuyente, CANTIDAD);
 					 }
 					 break;
 
-				case 3:
+				case 3: //Baja contribuyente
 					 if(flagCarga==0)
 					 {
+						 printf("No se han ingresado ningún contribuyente.\n");
 					 }
 					 else
 					 {
+						 darBaja(contribuyente, CANTIDAD);
+						 revizarIsEmpty(contribuyente, CANTIDAD, &flagCarga);
 					 }
 					 break;
 

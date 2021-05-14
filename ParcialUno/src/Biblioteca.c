@@ -334,8 +334,6 @@ void descripcionPorInt(int* opcion, char* descripFinal, char* descripUno, char* 
 
 int getCuil(int* pNumero, char* mensaje, char* mensajeError, int reintentos)
 {
-	int maximo=14;
-    int minimo=11;
     int retorno=0;
     char bufferStr[14];
 
@@ -348,7 +346,7 @@ int getCuil(int* pNumero, char* mensaje, char* mensajeError, int reintentos)
             {
                 if(esNumero(bufferStr)==1)
                 {
-                    strncpy(pNumero,bufferStr,14);
+                    *pNumero=atoi(bufferStr);
                     retorno=1;
                     break;
                 }
